@@ -26,10 +26,19 @@
 
 def palindrome?(str)
   # YOUR CODE HERE
+  modStr = str.downcase.gsub(/\W|\s/,'')
+  modStrRev = modStr.reverse
+  modStr==modStrRev
+
 end
 
 def count_words(str)
   # YOUR CODE HERE
+  words = str.split(/\W/)
+  words.select {|i| (i=~/\b.+\b/)==0}
+  myHash = Hash.new(0)
+  words.each {|i| myHash[i] += 1 }
+  return myHash
 end
 
 
