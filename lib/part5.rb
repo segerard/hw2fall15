@@ -6,7 +6,7 @@ class CartesianProduct
     @seq1 = seq1
     @seq2 = seq2
     @cart_prod = []
-    cartesian
+    self.cartesian
   end
   
   def cartesian
