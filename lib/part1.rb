@@ -25,23 +25,20 @@
 #instructions specified in the assignment description to hand-in your work.
 
 def palindrome?(str)
-  # YOUR CODE HERE
-  modStr = str.downcase.gsub(/\W|\s/,'')
+  modStr = str.downcase.gsub(/\W/,'')
   modStrRev = modStr.reverse
   modStr==modStrRev
-
 end
 
 def count_words(str)
-  # YOUR CODE HERE
-  words = str.split(/\W/)
-  words.select {|i| (i=~/\b.+\b/)==0}
+  words = str.downcase.split(/\W/)
+  words = words.select {|i| (i=~/\b.*\b/)==0}
   myHash = Hash.new(0)
   words.each {|i| myHash[i] += 1 }
   return myHash
 end
 
-
+#############TESETING##############
 #the code below this line will test your functions. 
 #You should remove everything below this line prior to submitting your file
 
@@ -65,6 +62,6 @@ end
 
 
 test_str = "The rent is due on the first day of the month unless the first day of the month falls on a Saturday or Sunday"
-
+test_str = "I'm Im"
 word_count = count_words test_str
 puts word_count

@@ -1,7 +1,6 @@
 class CartesianProduct
   include Enumerable
 
-  # YOUR CODE HERE
   def initialize(seq1,seq2)
     @seq1 = seq1
     @seq2 = seq2
@@ -13,8 +12,16 @@ class CartesianProduct
     @seq1.each {|a| @seq2.each {|b| @cart_prod.push([a,b])} }
   end
 
-  def each(&block)
-    @cart_prod.each &block
+  def each
+    @cart_prod.each {|val| yield val}
   end
   
 end
+
+
+#############TESTING###############
+c = CartesianProduct.new([:a,:b],[4,5])
+c.each { |elt| puts elt.inspect }
+c = CartesianProduct.new([:a,:b],[])
+c.each { |elt| puts elt.inspect }
+
