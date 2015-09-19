@@ -31,7 +31,7 @@ def palindrome?(str)
 end
 
 def count_words(str)
-  words = str.downcase.split(/\W/)
+  words = str.downcase.split(/\b/)
   words = words.select {|i| (i=~/\b.*\b/)==0}
   myHash = Hash.new(0)
   words.each {|i| myHash[i] += 1 }
@@ -62,6 +62,6 @@ end
 
 
 test_str = "The rent is due on the first day of the month unless the first day of the month falls on a Saturday or Sunday"
-test_str = "I'm Im"
+test_str = "A man, a plan, a canal -- Panama"
 word_count = count_words test_str
 puts word_count
