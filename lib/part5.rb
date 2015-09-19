@@ -19,9 +19,3 @@ class CartesianProduct
 end
 
 
-#############TESTING###############
-c = CartesianProduct.new([:a,:b,:c],[4,5])
-c.each { |elt| puts elt.inspect }
-c = CartesianProduct.new([:a,:b],[])
-c.each { |elt| puts elt.inspect }
-

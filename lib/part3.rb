@@ -25,11 +25,7 @@ class JellyBean < Dessert
   attr_accessor :flavor   
   
   def delicious?
-    !(@flavor.downcase  == "black licoric")
+    !(@flavor.downcase  == "black licorice")
   end
 end
 
-#########TESTING##############
-a = JellyBean.new("sar",2000,"black licorice")
-puts a.delicious?
-puts a.healthy?

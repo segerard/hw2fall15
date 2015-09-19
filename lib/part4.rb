@@ -10,30 +10,3 @@ class Class
 end
 
 
-###########TESTING##############
-
-class Foo
-  attr_accessor_with_history :bar
-end
-
-class SomeOtherClass
-  attr_accessor_with_history :foo
-  attr_accessor_with_history :bar
-end
-
-
-f = Foo.new
-puts f.bar_history.inspect
-
-f.bar = 1
-f.bar = 2
-puts f.bar_history.inspect
-f = Foo.new
-puts f.bar_history.inspect
-f = SomeOtherClass.new
-f.foo = 3
-f.bar = 6
-f.foo = 10
-puts f.foo_history.inspect
-puts f.bar_history.inspect
-

@@ -27,12 +27,3 @@ def rps_tournament_winner(tournament)
     rps_tournament_winner([rps_tournament_winner(tournament[0]),rps_tournament_winner(tournament[1])])
   end
 end
-
-#############TESTING##############
-a = [[[["joe","P"],["Mary","S"]],[["Bob","R"],["alice","s"]]],[[["steve","S"],["Jane","P"]],[["ted","R"],["carol","P"]]]]
-winnerT=rps_tournament_winner(a)
-a = [["sarah","R"],["cale","S"]]
-winnerG = rps_game_winner(a)
-puts winnerT.inspect
-puts winnerG.inspect
-#feel free to add your own helper functions as needed
